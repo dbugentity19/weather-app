@@ -24,9 +24,9 @@ function App() {
     <div className="border-[15px] border-pink-300 min-h-screen">
       {/* Navbar */}
       <Navbar />
-      <div className="border-b-[3px] border-black pb-2 mt-4 max-w-[800px] mx-auto flex">
+      <div className="border-b-[3px] border-black pb-2 mt-4 max-w-[800px] mx-auto block sm:flex">
         {/* Input */}
-        <div className="w-[40%]">
+        <div className="w-full sm:w-[40%]">
           <Input
             name={'location'}
             type={'text'}
@@ -35,7 +35,7 @@ function App() {
             onChange={(e) => setLocation(e.target.value)}
           />
         </div>
-        <div className="flex justify-center w-[60%]">
+        <div className="flex ml-3 sm:justify-center w-full sm:w-[60%]">
           <div className="flex items-center">
             <ClockIcon className="h-5 w-5 text-gray-400" />
             <Dropdown
