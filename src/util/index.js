@@ -41,14 +41,14 @@ export const getAllDatesInMonthForDay = (dayName) => {
 
 export const isNiceDay = (temp) => {
   if (temp >= 60 && temp <= 75) {
-    return 'nice day';
+    return 'Nice day';
   } else {
     return false;
   }
 };
 export const isChanceOfRain = (humidity) => {
   if (humidity >= 25 && humidity <= 75) {
-    return 'chance of rain';
+    return 'Chance of rain';
   } else {
     return false;
   }
