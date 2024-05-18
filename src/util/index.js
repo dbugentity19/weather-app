@@ -53,3 +53,19 @@ export const isChanceOfRain = (humidity) => {
     return false;
   }
 };
+
+export const convertTimeTo12HourFormat = (timeString) => {
+  // First, convert the time string into a Date object
+  const [hours24, minutes] = timeString.split(':');
+  const date = new Date();
+  date.setHours(parseInt(hours24, 10), parseInt(minutes, 10), 0); // set seconds to 0
+
+  // Then, retrieve 12-hour formatted time
+  let hours12 = date.getHours() % 12;
+  hours12 = hours12 ? hours12 : 12; // the hour '0' should be '12'
+  const ampm = date.getHours() >= 12 ? 'PM' : 'AM';
+
+  return `${hours12}:${
+    date.getMinutes() < 10 ? '0' : ''
+  }${date.getMinutes()} ${ampm}`;
+};

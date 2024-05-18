@@ -1,6 +1,6 @@
 import axios from 'axios';
 import { afternoonTimes, eveningTimes, morningTimes } from '../data';
-import { getAllDatesInMonthForDay } from '../util';
+import { convertTimeTo12HourFormat, getAllDatesInMonthForDay } from '../util';
 
 export const fetchWeatherData = async (location, date) => {
   const API_KEY = process.env.REACT_APP_WEATHER_API_KEY;
@@ -67,14 +67,11 @@ export const getRepeatedWeekDayData = (
           humidity: element.days[0].humidity,
           description: element.days[0].description,
           icon: element.days[0].icon,
-          data: element.days[0].hours.filter((item) => {
-            if (selectedTime === 'Morning') {
-              return morningTimes.includes(item.datetime);
-            } else if (selectedTime === 'Afternoon') {
-              return afternoonTimes.includes(item.datetime);
-            } else {
-              return eveningTimes.includes(item.datetime);
-            }
+          data: element.days[0].hours.map((item) => {
+            return {
+              ...item,
+              datetime: convertTimeTo12HourFormat(item.datetime),
+            };
           }),
         };
       }
@@ -106,14 +103,11 @@ export const fetch15DaysWeatherData = async (
         humidity: element.humidity,
         description: element.description,
         icon: element.icon,
-        data: element.hours.filter((item) => {
-          if (selectedTime === 'Morning') {
-            return morningTimes.includes(item.datetime);
-          } else if (selectedTime === 'Afternoon') {
-            return afternoonTimes.includes(item.datetime);
-          } else {
-            return eveningTimes.includes(item.datetime);
-          }
+        data: element.hours.map((item) => {
+          return {
+            ...item,
+            datetime: convertTimeTo12HourFormat(item.datetime),
+          };
         }),
       };
     }

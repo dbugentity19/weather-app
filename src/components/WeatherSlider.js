@@ -37,6 +37,14 @@ const WeatherSlider = ({ loading, weatherData }) => {
       return <img className="w-[80px]" src="/cloudy.png" alt="cloudy.png" />;
     } else if (icon === 'sunny') {
       return <img className="w-[80px]" src="/sunny.png" alt="sunny.png" />;
+    } else if (icon === 'sunny-day') {
+      return (
+        <img className="w-[80px]" src="/sunny-day.png" alt="sunny-day.png" />
+      );
+    } else if (icon === 'clear-day') {
+      return (
+        <img className="w-[60px]" src="/clear-day.png" alt="clear-day.png" />
+      );
     }
   };
   return (

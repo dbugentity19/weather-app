@@ -23,7 +23,7 @@ const ActionsNav = ({
             name={'location'}
             type={'text'}
             value={location}
-            placeholder={'Dolors Park, SF'}
+            placeholder={'Enter Location'}
             onChange={(e) => setLocation(e.target.value)}
           />
         </div>

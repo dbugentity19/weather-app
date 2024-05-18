@@ -8,14 +8,16 @@ import { fetch15DaysWeatherData } from './api';
 function App() {
   const [loading, setLoading] = useState(false);
 
-  const [location, setLocation] = useState('New York, NY');
+  const [location, setLocation] = useState('');
   const [selectedDay, setSelectedDay] = useState('First 15 Days');
   const [selectedTime, setSelectedTime] = useState('Morning');
   const [weatherData, setWeatherData] = useState([]);
 
   useEffect(() => {
-    fetch15DaysWeatherData(location, setLoading, selectedTime, setWeatherData);
-  }, []);
+    if (location === '') {
+      setWeatherData([]);
+    }
+  }, [location]);
 
   return (
     <div className="border-[15px] border-pink-300 min-h-screen">
@@ -33,7 +35,13 @@ function App() {
         setWeatherData={setWeatherData}
       />
       {/* WeatherSlider */}
-      <WeatherSlider loading={loading} weatherData={weatherData} />
+      {location === '' || weatherData.length === 0 ? (
+        <h1 className="text-3xl text-center text-gray-500 mt-[150px]">
+          Enter the Location and Day to get the Weather
+        </h1>
+      ) : (
+        <WeatherSlider loading={loading} weatherData={weatherData} />
+      )}
     </div>
   );
 }
