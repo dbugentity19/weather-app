@@ -3,7 +3,7 @@ import './App.css';
 import Navbar from './components/Navbar';
 import WeatherSlider from './components/WeatherSlider';
 import ActionsNav from './components/ActionsNav';
-import { fetch15DaysWeatherData } from './api';
+import { Circles } from 'react-loader-spinner';
 
 function App() {
   const [loading, setLoading] = useState(false);
@@ -20,7 +20,7 @@ function App() {
   }, [location]);
 
   return (
-    <div className="border-[15px] border-pink-300 min-h-screen">
+    <div className="min-h-screen bg-gradient-to-r from-indigo-100 via-purple-100 to-pink-100">
       {/* Navbar */}
       <Navbar />
       {/* ActionsNav */}
@@ -35,7 +35,18 @@ function App() {
         setWeatherData={setWeatherData}
       />
       {/* WeatherSlider */}
-      {location === '' || weatherData.length === 0 ? (
+      {loading ? (
+        <div className="flex justify-center pt-[100px]">
+          <Circles
+            height="80"
+            width="80"
+            color="#FF385C"
+            ariaLabel="circles-loading"
+            wrapperClass=""
+            visible={true}
+          />
+        </div>
+      ) : location === '' || weatherData.length === 0 ? (
         <h1 className="text-3xl text-center text-gray-500 mt-[150px]">
           Enter the Location and Day to get the Weather
         </h1>

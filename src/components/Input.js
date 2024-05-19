@@ -11,7 +11,7 @@ const Input = ({ name, type, value, placeholder, onChange }) => {
           type={type}
           name={name}
           value={value}
-          className="block w-full rounded-md border-0 py-1.5 pl-10 text-gray-900 ring-0  placeholder:text-gray-400 focus:ring-0 sm:text-sm sm:leading-6"
+          className="block w-full bg-transparent rounded-md border-0 py-1.5 pl-10 text-black ring-0  placeholder:text-black  focus:ring-0 sm:text-sm sm:leading-6"
           onChange={onChange}
           placeholder={placeholder}
         />
