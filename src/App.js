@@ -48,7 +48,7 @@ function App() {
         </div>
       ) : location === '' || weatherData.length === 0 ? (
         <h1 className="text-3xl text-center text-gray-500 mt-[150px]">
-          Enter the Location and Day to get the Weather
+          Enter the location to get the weather
         </h1>
       ) : (
         <WeatherSlider loading={loading} weatherData={weatherData} />

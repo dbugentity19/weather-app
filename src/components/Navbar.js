@@ -22,7 +22,7 @@ const Navbar = () => {
               </div>
               <div className="flex flex-1 items-center justify-start sm:items-stretch sm:justify-start">
                 <div className="flex flex-shrink-0 items-center">
-                  <h1 className="text-red-500">WEATHER.IO</h1>
+                  <h1 className="text-indigo-500 font-medium text-xl">WEATHER.IO</h1>
                 </div>
               </div>
               <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
