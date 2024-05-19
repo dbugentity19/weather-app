@@ -24,7 +24,7 @@ Welcome to Weather App! This application provides weather forecasts for any loca
 
 ## Hosting
 
-The app is hosted on Vercel: 
+The app is hosted on Vercel: https://weather-app-drab-three-48.vercel.app/
 
 ## Running The App Locally
 
