@@ -41,8 +41,7 @@ export const getAllDatesInMonthForDay = (dayName) => {
 
 export const isNiceDay = (temp) => {
   if (temp >= 60 && temp <= 75) {
-    return ''; // leaving this blank as the weather conditions are directly 
-    // imported from the API
+    return 'Nice day.';
   } else {
     return false;
   }
@@ -50,8 +49,7 @@ export const isNiceDay = (temp) => {
 
 export const isChanceOfRain = (humidity) => {
   if (humidity >= 25 && humidity <= 75) {
-    return ''; // leaving this blank as the weather conditions are directly 
-    // imported from the API
+    return 'Chance of rain.';
   } else {
     return false;
   }

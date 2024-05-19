@@ -177,7 +177,7 @@ const WeatherSlider = ({ loading, weatherData }) => {
             <SwiperSlide key={`wd_${i}`} style={{ paddingRight: '25px'}}>
               {wd && (
                 <div className="flex flex-col items-center justify-center mb-4">
-                  <div className="flex items-center gap-3">
+                  <div className="flex h-[120px] items-center gap-3">
                     {showIcon(wd.icon)}
                     <div>
                       <h1 className="text-xl">
