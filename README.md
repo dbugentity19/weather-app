@@ -22,10 +22,6 @@ Welcome to Weather App! This application provides weather forecasts for any loca
 
 **Keyboard Navigation:** The app supports keyboard navigation, allowing you to slide through the forecasts using the arrow keys on your keyboard. This feature allows for a smooth and accessible user experience.
 
-## Hosting
-
-The app is hosted on Vercel: https://weather-app-drab-three-48.vercel.app/
-
 ## Running The App Locally
 
 ### `npm start`
